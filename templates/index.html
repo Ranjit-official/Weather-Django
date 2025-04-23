@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 10px;
+            background-color: aqua;
+        }
+        
+        form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            background-color: rgb(89, 89, 217);
+        }
+        
+        input {
+            width: 400px;
+            height: 50px;
+        }
+        
+        .search:active {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="header">Weather App</h1>
+    <form method="POST">
+        <input type="text" name="search" id="">
+        <div class="btn">Search</div>
+    </form>
+</body>
+
+</html>
