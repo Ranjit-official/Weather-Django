@@ -1,52 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        * {
-            margin: 0px;
-            padding: 0px;
-            box-sizing: border-box;
-        }
-        
-        .header {
-            text-align: center;
-            padding: 10px;
-            background-color: aqua;
-        }
-        
-        form {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-        }
-        
-        .btn {
-            padding: 10px 20px;
-            background-color: rgb(89, 89, 217);
-        }
-        
-        input {
-            width: 400px;
-            height: 50px;
-        }
-        
-        .search:active {
-            border: 2px solid black;
-        }
-    </style>
-</head>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
 
-<body>
+      .header {
+        text-align: center;
+        padding: 10px;
+        background-color: aqua;
+      }
+
+      form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .btn {
+        padding: 10px 20px;
+        background-color: rgb(89, 89, 217);
+      }
+
+      input {
+        width: 400px;
+        height: 50px;
+      }
+
+      .search:active {
+        border: 2px solid black;
+      }
+
+      .list-of-countrys {
+        display: grid;
+        position: relative;
+        place-items: center;
+        padding: 30px 0;
+        margin: auto;
+        width: 400px;
+        gap: 20px;
+      }
+
+      .list {
+        width: 100%;
+        border: 1px solid grey;
+        border-radius: 8px;
+        padding: 20px;
+      }
+
+      .title {
+        font-size: 30px;
+      }
+
+      .temperature {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
     <h1 class="header">Weather App</h1>
     <form method="POST">
-        <input type="text" name="search" id="">
-        <div class="btn">Search</div>
+      <input
+        type="text"
+        name="search"
+        id=""
+        placeholder="Enter the Country Name"
+      />
+      <div class="btn">Search</div>
     </form>
-</body>
-
+    <div class="list-of-countrys">
+      {% for data in response %}
+      <div class="list">
+        <div class="title">{{data.city}}</div>
+        <div class="temperature">{{data.temperature}} F</div>
+        <div class="country">{{data.country}}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
 </html>
